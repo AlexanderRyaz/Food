@@ -20,8 +20,8 @@ public class Recipe {
 
     public double getTotalCost() {
         if (!foodList.getFoodList().isEmpty()) {
-            for (Food food : foodList.getFoodList()) {
-                totalCost += food.getPrice() * food.getWeight();
+            for (Food food : foodList.getFoodList().keySet()) {
+                totalCost += food.getPrice() * foodList.getFoodList().get(food);
             }
         }
         return totalCost;
